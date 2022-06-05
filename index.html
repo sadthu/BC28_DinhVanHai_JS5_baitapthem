@@ -24,7 +24,7 @@
                         <input class="form-control mt-2 text-center" type="text" id="totalIncome"
                             placeholder="Tổng Thu Nhập">
                         <input class="form-control mt-2 text-center" type="text" id="dependent"
-                            placeholder="số phụ thuộc">
+                            placeholder="Số phụ thuộc">
                     </div>
                     <button class="btn btn-success mt-2" id="calculate"> Tính Tiền Thuế </button>
                 </div>
@@ -32,6 +32,34 @@
             </div>
         </div>
     </div>
+    <br><br><br>
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 40%;">
+            <h3 class="card-header text-center">Bài Tập 2</h3>
+            <div class="card-body">
+                <div class="form-group text-center">
+                    <div class="form-group text-center d-flex" style="gap: 10px;">
+                        <select id="customType" class="form-control mt-2 text-center">
+                            <option class="text-left" value="0">Loại khách hàng</option>
+                            <option class="text-left" value="1">Nhà dân</option>
+                            <option class="text-left" value="2">Doanh nghiệp</option>
+                        </select>
+                        <input class="form-control mt-2 text-center" type="text" id="clientCode"
+                            placeholder="Mã khách hàng">
+                        <input class="form-control mt-2 text-center" type="text" id="channelPro"
+                            placeholder="Số kênh cao cấp">
+                    </div>
+                    <div class="form-group text-center d-flex">
+                        <input class="form-control mt-2 text-center" style="width: calc(96%/3);" type="text" id="connectNumber"
+                            placeholder="Số kết nối">
+                    </div>
+                    <button class="btn btn-success mt-2" id="cableBill"> Tính Tiền Cáp </button>
+                </div>
+                <div id="result2" class="alert alert-success text-center"></div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

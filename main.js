@@ -1,3 +1,5 @@
+
+// bài 1
 let taxIncome = 0;
 calculate.onclick = function () {
     var fullName = document.getElementById('fullName').value;
@@ -29,4 +31,58 @@ function taxCal(taxIncome) {
     }
 
     return totalPay;
+}
+
+//bài 2
+let customerType = 0;
+document.getElementById('connectNumber').style.display = 'none';
+
+document.getElementById('customType').onchange = function () {
+    myFucion ();
+}
+
+function myFucion () {
+    customerType = +document.getElementById('customType').value;
+    if (customerType == 2) {
+        document.getElementById('connectNumber').style.display = 'block';
+    } else {
+        document.getElementById('connectNumber').style.display = 'none';
+    }
+}
+
+cableBill.onclick = function () {
+    var clientCode = document.getElementById('clientCode').value;
+    let dollarUS = Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+    document.getElementById('result2').innerHTML = 'Mã khách hàng: ' + clientCode + '; ' + 'Tiền cáp: ' + dollarUS.format(cableCharge ()); 
+}
+
+function cableCharge () {
+    var prices = [4.5, 20.5, 7.5, 15, 75, 50, 5];
+    var channelPro = +document.getElementById('channelPro').value;
+    var connectNumber = +document.getElementById('connectNumber').value;
+    var total = 0;
+    if (channelPro < 0 || !Number.isInteger(channelPro)) {
+        channelPro = 0;
+    }
+    if (connectNumber < 0 || !Number.isInteger(connectNumber)) {
+        return 0;
+    }
+    switch (customerType) {
+        case 1: {
+            total = prices[0] + prices[1] + prices[2] * channelPro;         
+        }break;
+        case 2: {
+            total = prices[3] + prices[4] + prices[5] * channelPro;
+            if (connectNumber > 10) {
+                total += prices[6] * (connectNumber - 10);
+            }
+        }break;
+        default: {
+            alert('Chọn loại khách hàng');
+        }
+    }
+    return total;
 }
