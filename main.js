@@ -60,7 +60,7 @@ cableBill.onclick = function () {
 }
 
 function cableCharge () {
-    var prices = [4.5, 20.5, 7.5, 15, 75, 50, 5];
+    const prices = [4.5, 20.5, 7.5, 15, 75, 50, 5];
     var channelPro = +document.getElementById('channelPro').value;
     var connectNumber = +document.getElementById('connectNumber').value;
     var total = 0;
