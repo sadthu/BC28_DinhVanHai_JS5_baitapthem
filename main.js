@@ -21,7 +21,7 @@ function taxCal(taxIncome) {
 
     var inLoop = taxIncome;
 
-    for (i = 0; i < Amounts.length; i++) {
+    for (var i = 0; i < Amounts.length; i++) {
         if (inLoop > Amounts[i] && i < 6) {
             inLoop -= Amounts[i];
         } else {
